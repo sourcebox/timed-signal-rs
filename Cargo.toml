@@ -1,0 +1,11 @@
+[package]
+name = "timed-signal"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.62"
+authors = ["Oliver Rockstedt <info@sourcebox.de>"]
+description = "Helper crate for generating time-dependent signals."
+repository = "https://github.com/sourcebox/timed-signal-rs"
+license = "MIT"
+categories = ["no-std", "embedded", "hardware-support"]
+keywords = ["signal", "latch", "time"]
