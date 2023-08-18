@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Derive `Clone`, `PartialEq` and `Eq` traits.
+- Inverted state, `set_inverted` and `is_inverted` functions.
 
 ## [0.1.0] - 2022-12-18
 

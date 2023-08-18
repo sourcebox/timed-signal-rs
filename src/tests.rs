@@ -528,3 +528,21 @@ fn clone() {
 
     assert_ne!(signal, cloned_signal);
 }
+
+/// Inverted state.
+#[test]
+fn inverted() {
+    let mut signal = TimedSignal::new();
+
+    signal.on();
+    assert_eq!(signal.update(0), true);
+    assert_eq!(signal.state(), true);
+
+    signal.set_inverted(true);
+    assert_eq!(signal.update(0), false);
+    assert_eq!(signal.state(), false);
+
+    signal.off();
+    assert_eq!(signal.update(0), true);
+    assert_eq!(signal.state(), true);
+}

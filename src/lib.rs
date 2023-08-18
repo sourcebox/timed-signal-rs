@@ -9,6 +9,9 @@ pub struct TimedSignal {
 
     /// Timed action.
     tick_action: TickAction,
+
+    /// Invert state.
+    inverted: bool,
 }
 
 /// Action to perform when update() is called on a specific tick.
@@ -57,12 +60,22 @@ impl TimedSignal {
             _ => {}
         }
 
-        self.state
+        self.state()
     }
 
     /// Return current state.
     pub fn state(&self) -> bool {
-        self.state
+        self.state ^ self.inverted
+    }
+
+    /// Set inverted state on/off.
+    pub fn set_inverted(&mut self, inverted: bool) {
+        self.inverted = inverted;
+    }
+
+    /// Return if state is inverted.
+    pub fn is_inverted(&self) -> bool {
+        self.inverted
     }
 
     /// Set state according to a boolean value.
