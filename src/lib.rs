@@ -2,7 +2,7 @@
 #![cfg_attr(not(test), no_std)]
 
 /// Signal state and scheduled tick action.
-#[derive(Debug, Default)]
+#[derive(Debug, Default, Clone, PartialEq, Eq)]
 pub struct TimedSignal {
     /// Current state, false = off, true = on.
     state: bool,
@@ -12,7 +12,7 @@ pub struct TimedSignal {
 }
 
 /// Action to perform when update() is called on a specific tick.
-#[derive(Default, Debug, PartialEq, Eq)]
+#[derive(Debug, Default, Clone, PartialEq, Eq)]
 enum TickAction {
     /// No action.
     #[default]

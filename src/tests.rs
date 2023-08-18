@@ -513,3 +513,18 @@ fn toggle_for_when_on_retrigger() {
         assert_eq!(state, expected_state);
     }
 }
+
+/// Clone the signal.
+#[test]
+fn clone() {
+    let mut signal = TimedSignal::new();
+
+    signal.on();
+
+    let cloned_signal = signal.clone();
+    assert_eq!(signal, cloned_signal);
+
+    signal.off();
+
+    assert_ne!(signal, cloned_signal);
+}
